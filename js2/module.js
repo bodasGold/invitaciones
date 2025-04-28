@@ -71,7 +71,7 @@ const changeImg = () =>{
       console.log("→ Llamando a API con:", name);
       //https://bodasgoldback-production.up.railway.app/api/
       //http://localhost:8080/api/
-      fetch('http://localhost:8080/api/'+name, {
+      fetch('https://bodasgoldback-production.up.railway.app/api/'+name, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json' // Indicamos que enviamos JSON
