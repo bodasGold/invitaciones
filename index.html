@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BodasGold</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Playwrite+VN:wght@100..400&display=swap"
+        rel="stylesheet">
+
+    <link href="css/slider.css" rel="stylesheet">
+    <link href="css/dropdown.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Playwrite+IN:wght@100..400&family=Playwrite+VN:wght@100..400&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body id="body">
+    <section class="sub-body">
+        <input type="number" id="allergensGuestNum" value='0' hidden>
+        <div id="div1" class="text-center">
+            <div class="subDiv1">
+                <img id="principalImg" src="img/bg/principal.jpg"
+                    style=" width:100%; height:100%; object-fit:cover;margin-bottom:20px;">
+            </div>
+                <p id="text1" class="principal-text"></p>
+                <strong>
+                    <p id="text2" class="principal-text"></p>
+                </strong>
+                <p id="principalDate" class="principal-text"></p>
+            
+        </div>
+
+        <div id="subSeccion" class="container-fluid text-center subSeccion">
+            <p id="text3"></p>
+        </div>
+        <!-- Sección 2 <img src="https://i.ibb.co/8rN2zBx/flores1.png" width="120px"> -->
+        <div id="info" class="container-fluid seccion-2 p-10">
+            <div class="row">
+                <div class="col text-center">
+                    <p id="bodaText" class="info-text"></p>
+                    <p id="bodaInfo" class="info-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timer -->
+        <div id="timer" class="container-fluid timer">
+            <div class="text-center">
+                <p id="day" class="day"></p>
+            </div>
+            <div class="contador">
+                <div class="unidad">
+                    <span id="dias">0</span>
+                    <p>Días</p>
+                </div>
+                <div class="unidad">
+                    <span id="horas">0</span>
+                    <p>Horas</p>
+                </div>
+                <div class="unidad">
+                    <span id="minutos">0</span>
+                    <p>Min</p>
+                </div>
+                <div class="unidad">
+                    <span id="segundos">0</span>
+                    <p>Seg</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <p id="date" class="date"></p>
+            </div>
+        </div>
+
+
+        <!-- Sección 3 --->
+        <div class="container-fluid intinerario text-center" id="container-intinerario">
+            <h1>Intinerario</h1>
+            <div style="display: flex; justify-content: center; position: relative; margin-top: 30px;">
+                <div style="width: 1%;"></div>
+                <div style="width: 100%; justify-content: center;">
+                    <div id="barraProgreso" style="margin: auto;"></div>
+                </div>
+                <div id="intinerario" style="background-color: transparent;position: absolute; z-index: 2">
+                </div>
+                <div id="rellenoIntinerario" style="opacity: 0; width: 1%;"></div>
+            </div>
+
+        </div>
+
+
+        <!-- Sección 3 -->
+        <div id="form" class="container form text-center" style="position: relative;">
+            <input id="newQuantity" type="number" hidden />
+            <div style="height: 100%; ">
+                <div id="popUPAllergens" style="border: solid #ede3d7; border-radius: 20px;" class=" container-fluid popUp" hidden></div>
+            </div>
+            <div id="formGuest" class="formGuest">
+                <p>Información de los Invitados</p>
+                <select id="quantity" onchange="editQuantityGuests(this.value)" class="bg-crema"
+                    style="text-align: center;">
+                </select>
+                <div id="guests">
+                </div>
+            </div>
+        </div>
+
+        <div id="regalo" class="container text-center regalo">
+            <p>El regalo es opcional, la asistencia obligatoria pero si quieres tener
+                un detalle con nosotros te damos algunas ideas</p>
+            <img src="img/icon/mail.svg" style="width: 40px; margin-bottom: 5px;">
+            <div id="dropdownGift">
+            </div>
+        </div>
+        <div id="subSeccion" class="container-fluid text-center subSeccion">
+            <p id="text4" class="info-text"></p>
+        </div>
+
+
+
+        <div style=" width: 99%;margin: auto; margin-top: 15px;">
+            <img src="img/bg/final.jpg" style=" width:100%;height:100%;object-fit:cover;margin-bottom:20px;">
+        </div>
+
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script id="dataObject" type="application/json">
+
+    </script>
+    <script src="js2/dropdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js2/timer.js"></script>
+    <script src="js2/functions.js"></script>
+    <script src="js2/module.js" type="module"></script>
+
+
+    <script>
+        // Función que actualiza la altura de la barra de progreso
+        const contenedor = document.getElementById('container-intinerario');
+        const div1 = document.getElementById('div1');
+        const info = document.getElementById('info');
+        const timer = document.getElementById('timer');
+
+
+        function actualizarBarraProgreso() {
+            var alturaContenido = contenedor.scrollHeight;
+            var posicionScroll = window.pageYOffset; // Cuánto se ha desplazado verticalmente dentro del div
+            var alturaDiv1 = div1.clientHeight;
+            var alturaInfo = info.clientHeight;
+            var alturaTimer = timer.clientHeight;
+
+            const total = (alturaDiv1 + alturaInfo);//+alturaTimer;
+
+            if (total > posicionScroll) {
+                document.getElementById('barraProgreso').style.height = 0 + '%';
+            } else {
+                // Calcular el porcentaje del documento que ha sido desplazado
+                var porcentajeDesplazado = ((posicionScroll - total) * 100) / (alturaContenido);
+                if (porcentajeDesplazado > 100) porcentajeDesplazado = 100;
+                document.getElementById('barraProgreso').style.height = porcentajeDesplazado + '%';
+            }
+
+        }
+
+        // Añadir el evento de scroll al window y llamar a la función cada vez que se haga scroll
+        window.onscroll = actualizarBarraProgreso;
+
+    </script>
+</body>
+
+</html>

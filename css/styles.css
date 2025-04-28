@@ -1,0 +1,241 @@
+        /* Eliminar márgenes predeterminados del body */
+        body,
+        html {
+            background-color: #ede3d7;
+            scroll-behavior: smooth;
+            font-family: "Euphoria Script", cursive;
+            overflow-x: hidden;
+            /* Desplazamiento suave */
+        }
+
+        body a {
+            color: #5d674f;
+            /* Deshabilita el desplazamiento */
+        }
+
+        .sub-body{
+            max-width: 480px;
+            margin: auto;
+        }
+        .subDiv1{
+             width: 99%; margin: auto; margin-top: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .subDiv{
+                height: 100vh;
+            }
+            .div1{ text-align: center;}
+          }
+
+        .no-scroll {
+            overflow: hidden;
+            /* Deshabilita el desplazamiento */
+        }
+
+        /* Opcional: estilos para diferenciar las secciones */
+        .seccion-2 {
+            background-color: #ede3d7;
+            padding: 15px 5px;
+            color: #9e846d;
+            font-size: 50px;
+            font-family: "Euphoria Script", cursive;
+        }
+
+        .intinerario {
+            background-color: #EEF3F1;
+            padding: 50px 0px;
+            font-family: "Playwrite VN", cursive;
+        }
+
+        .inti-item {
+            background-color: #EEF3F1;
+            opacity: 0.9;
+        }
+
+        .inti-item-line {
+            height: 40px;
+            margin-bottom: 5px;
+        }
+
+        .intinerario img {
+            margin-bottom: 5px;
+        }
+
+        .form {
+            background-color: #9e846d;
+            min-height: 200px;
+            padding: 30px;
+        }
+
+        /* Añadir estilos adicionales según necesidad */
+        /*
+        colores
+        #9e846d;
+        #ede3d7;
+        #859878;
+        #5d674f;
+
+        */
+        .bg-crema{
+            background-color: #ede3d7;
+            border: none;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .div1 {
+            background-color: #ede3d7;
+            color: #9e846d;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .subSeccion {
+            color: #ede3d7;
+            background-color: #5d674f;
+            font-size: 35px;
+            padding: 10% 10px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .unidad {
+            width: 20%;
+            text-align: center;
+            font-family: "Brush Script MT", cursive;
+        }
+
+        .unidad span {
+            font-size: 30px;
+        }
+
+        .unidad p {
+            font-size: 25px;
+        }
+
+        .contador {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .timer {
+            /*background-image: url('img/bg/principal.jpg');*/
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: 30px;
+            font-family: "Brush Script MT", cursive;
+            background-color: #5d674f;
+            color: white;
+            padding: 15px;
+        }
+
+        .stick {
+            height: 7vh;
+            border-right: solid;
+            width: 1%;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+
+        .day {
+            font-size: 40px;
+        }
+
+        .date {
+            font-size: 40px;
+        }
+
+        .wd-80 {
+            width: 80%;
+            margin: auto;
+        }
+
+        .wd-60 {
+            width: 60%;
+            margin: auto;
+        }
+
+        .formAllergens {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .formAllergens label {
+            margin-bottom: 5px;
+        }
+
+        .formAllergens img {
+            width: 40px;
+            border-radius: 100%;
+            margin-right: 5px;
+        }
+
+        .formAllergens input {
+            margin-left: 5px;
+        }
+        
+        #barraProgreso {
+            width: 5px;
+            /* Ancho de la barra */
+            background-color: grey;
+            /* Color de la barra */
+            height: 0%;
+            /* Altura inicial */
+            border-radius: 100%
+        }
+
+        .principal-text {
+            font-size: 40px;
+        }
+
+        .info-text {
+            font-size: 40px;
+        }
+
+        .regalo {
+            font-size: 30px;
+            padding: 15px;
+        }
+
+        .formGuest {
+            font-size: 30px;
+        }
+
+        .formGuest select {
+            font-size: 20px;
+        }
+
+        .formGuest button {
+            font-size: 20px;
+        }
+
+        @keyframes rotar {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Aplicar la animación al SVG */
+        #weddingRing {
+            position: absolute;
+            /* Esto permite que el SVG se posicione fuera del flujo normal */
+            top: 50%;
+            /* Centrar verticalmente */
+            left: 50%;
+            /* Centrar horizontalmente */
+            /*transform: translate(-50%, -50%); /* Ajusta el SVG para que esté perfectamente centrado */
+            animation: rotar 5s linear infinite;
+            /* Animación de rotación */
+            z-index: 9999;
+        }
