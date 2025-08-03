@@ -10,7 +10,7 @@ const iglesia = document.getElementById('iglesia');
 const bodaInfo = document.getElementById('bodaInfo');
 
 
-function loadBodaInfo(boda){
+function loadBodaInfo(boda,afterDinner){
     principalDate.innerHTML = boda.date;
     for (let index = 0; index < boda.text.length; index++) {
         const id = 'text'+(index+1);
@@ -18,7 +18,9 @@ function loadBodaInfo(boda){
     }
     let text ="";
     bodaText.innerHTML = text;
-    text = ` 
+
+    if(afterDinner){
+        text = ` 
         <img src="img/icon/iglesia.png" style="width:120px; margin-top:5px;">
         <h2>${boda.info.iglesia.time}</h2>
         <h2>${boda.info.iglesia.name}</h2>
@@ -29,6 +31,16 @@ function loadBodaInfo(boda){
         <h2>${boda.info.salon.name}</h2>
         <a href="${boda.info.salon.link}" target="_blank"><h2>Ver ubicación</h2></a>
     `;
+    }else{
+        text = ` 
+        <img src="img/icon/copas.png" style="width:120px; margin-top:5px;">
+        <h2>${boda.info.afterDinner.time}</h2>
+        <h2>${boda.info.afterDinner.name}</h2>
+        <a href="${boda.info.afterDinner.link}" target="_blank"><h2>Ver ubicación</h2></a>
+        `;
+        document.getElementById('container-intinerario').remove();
+    }
+    
     bodaInfo.innerHTML = text;
     text = null;
     day.innerHTML = /*boda.day*/ "Faltan";

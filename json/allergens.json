@@ -1,0 +1,58 @@
+[
+        {
+            "name": "leche",
+            "img": "https://i.ibb.co/R7gdswG/leche.png"
+        },
+        {
+            "name": "glutten",
+            "img": "https://i.ibb.co/vJBXrNd/glutten.png"
+        },
+        {
+            "name": "frutosSeco",
+            "img": "https://i.ibb.co/DpNLWN1/frutos-Seco.png"
+        },
+        {
+            "name": "mostaza",
+            "img": "https://i.ibb.co/xFP2YGv/mostaza.png"
+        },
+        {
+            "name": "apio",
+            "img": "https://i.ibb.co/pj43jgr/apio.png"
+        },
+        {
+            "name": "altramuz",
+            "img": "https://i.ibb.co/nPfv8kd/altramuz.png"
+        },
+        {
+            "name": "cacahuetes",
+            "img": "https://i.ibb.co/xghPNQX/cacahuetes.png"
+        },
+        {
+            "name": "crustaceos",
+            "img": "https://i.ibb.co/1Gk1TsH/crustaceos.png"
+        },
+        {
+            "name": "huevo",
+            "img": "https://i.ibb.co/1MrHwhn/huevo.png"
+        },
+        {
+            "name": "pescado",
+            "img": "https://i.ibb.co/0mgT83w/pescado.png"
+        },
+        {
+            "name": "moluscos",
+            "img": "https://i.ibb.co/8MZ64Hw/moluscos.png"
+        },
+        {
+            "name": "sésamo",
+            "img": "https://i.ibb.co/Mn7ybdr/sesamo.png"
+        },
+        {
+            "name": "soja",
+            "img": "https://i.ibb.co/3mLFP0g/soja.png"
+        },
+        {
+            "name": "vegano",
+            "img": "https://i.ibb.co/FKt0XhS/vegan.png"
+        }
+    ]

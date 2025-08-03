@@ -21,7 +21,12 @@ const object = {
             "link":"https://maps.app.goo.gl/h83QYJo3NkEotb837",
             "time":"16:30",
             "name":"Parroquia Nuestra Señora de la Caridad"
-            }
+            },
+        "afterDinner":{
+          "link":"https://maps.app.goo.gl/Do3erMRwskRgXVVE9",
+          "time":"22:00",
+          "name":"Salón La Arboleda"
+        }
     },
     "intinerario" : [
         {
@@ -134,16 +139,18 @@ const changeImg = () =>{
   
 
 document.addEventListener('DOMContentLoaded', async function () {
-  // Mostrar el spinner de carga (anillo de boda)
-  //document.getElementById("loadingSpinner").style.display = "block";
   const params = new URLSearchParams(window.location.search);
   let name = params.get("invitado");
+  let afterDinner = false;
   if(name == null || name == ""){
     name = null;
-  } 
+  } else{
+    name = params.get("afterDinner");
+    afterDinner = true;
+  }
   console.log("Esperando datos...");
   try {
-    loadBodaInfo(object);
+    loadBodaInfo(object,afterDinner);
     loadIntinerario(object.intinerario);
     if (name !=null){
       object.guestData =  await loadGuestDB(name); // Espera completa
@@ -158,8 +165,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         addQuantity();
     }else{
         document.getElementById('form').remove();
-       // form.innerHTML =`<div id="qrcode"></div>`;
-        //sliderGenerator(object.guestData.guests);
     }
 
   } catch (err) {
@@ -173,7 +178,7 @@ const userDontFound = () =>{
     title: "Invitado no encontrado",
     confirmButtonText: "Aceptar",
     confirmButtonColor: '#5d674f',
-          background: '#ede3d7'
+    background: '#ede3d7'
   });
   document.getElementById('form').remove();
 }
