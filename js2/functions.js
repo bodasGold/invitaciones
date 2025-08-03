@@ -129,9 +129,8 @@ const save = () =>{
           })
         return;
     } else{
-      let text = 'Confirmo asistencia';
         Swal.fire({
-            title: text,
+            title: 'Estás seguro que quieres enviar las invitaciones?',
             confirmButtonText: 'Si',
             confirmButtonColor: '#5d674f',
             background: '#ede3d7',
@@ -161,8 +160,10 @@ const allergensData = [
         "img": "img/icon/vegano.png"
     }
 ];
+const isAfterDinner = () => document.getElementById('container-intinerario') == null?true:false;
 
 const willGoWedding = (guestData) =>{
+    
     fetch('https://bodasgoldback-production.up.railway.app/api', {
         method: 'PUT',
         headers: {
@@ -172,7 +173,8 @@ const willGoWedding = (guestData) =>{
           "name": guestData.name,
           "done": guestData.done,
           "quantity": guestData.quantity,
-          "guests":guestData.guests
+          "guests":guestData.guests,
+          "afterDinner": isAfterDinner()
         })
       })
         .then(response => {
@@ -206,7 +208,8 @@ const dontWillGoWedding = () =>{
         body: JSON.stringify({
           "name": object.guestData.name,
           "done": true,
-          "quantity": 0
+          "quantity": 0,
+          "afterDinner": isAfterDinner()
         })
       })
         .then(response => {
