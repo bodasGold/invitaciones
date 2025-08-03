@@ -47,5 +47,7 @@ function loadBodaInfo(boda,afterDinner){
     date.innerHTML = /*boda.date*/ "para nuestra boda";
 }
 export {loadBodaInfo};
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 //loadBodaInfo();
+
