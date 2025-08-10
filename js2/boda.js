@@ -18,8 +18,7 @@ function loadBodaInfo(boda,afterDinner){
     }
     let text ="";
     bodaText.innerHTML = text;
-
-    if(afterDinner){
+    if(!afterDinner){
         text = ` 
         <img src="img/icon/iglesia.png" style="width:120px; margin-top:5px;">
         <h2>${boda.info.iglesia.time}</h2>

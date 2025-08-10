@@ -33,12 +33,17 @@ const editQuantityGuests = (quantity) =>{
     object.guestData.guests = [];
     formGuests.innerHTML ="<div class='col'>";
     for (let index = 0; index < quantity; index++) {
-        const newGuest = `<div class="row">
+        let newGuest = ``;
+    if (!object.guestData.afterDinner) {
+      newGuest += `<div class="row">
         <input placeholder="Nombre Completo" name="name${index}" id="name${index}" type="text" class="wd-80 bg-crema">
-        <br>
-        <br>
-        <button onclick="allAllergens(${index})" class="wd-60 bg-crema">Selecionar Alergenos</button>
+        <br><br><button onclick="allAllergens(${index})" class="wd-60 bg-crema">Selecionar Alergenos</button>
     </div><br>`;
+    }else{
+      newGuest += `<br><div class="row">
+        <input placeholder="Nombre Completo" name="name${index}" id="name${index}" type="text" class="wd-80 bg-crema">
+        <br></div><br>`;
+    }
     formGuests.innerHTML += newGuest;
     object.guestData.guests.push({"name:": "","allergens":[]});
     scriptTag.textContent = JSON.stringify(object, null, 2);

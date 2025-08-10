@@ -6,14 +6,12 @@ let object = {
     "quantity":2,
     "done":false,
     "guests":[
-       { "allergens":['leche'],
+       { "allergens":[],
         "name":"",},
         {"allergens":[],"name":""}
         ]
 }
 const loadPrincipalObject = (guestData) =>object = guestData;
-
-
 
 /*consts*/
 const selectQuantity = document.getElementById('quantity');

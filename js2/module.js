@@ -1,7 +1,7 @@
 import {loadBodaInfo} from './boda.js';
 import { loadIntinerario } from './intinerario.js';
 import { loadPrincipalObject,addQuantity,createAllergensPopUp} from './index.js';
-
+const devMode = false;
 const object = {
     "day":"Sábado",
     "date":"04 de Octubre de 2025",
@@ -49,18 +49,7 @@ const object = {
             "time":"22:00",
             "name":"Fiesta"
         }
-    ],
-    "guestData" : {
-    "id":"1",
-    "name":"Alvaro Bernabey Izquierdo",
-    "quantity":2,
-    "done":false,
-    "guests":[
-       { "allergens":['leche'],"comment":"cca",
-        "name":"",},
-        {"allergens":[],"comment":"ccm","name":""}
-        ]
-}
+    ]
 
 }
 
@@ -74,9 +63,10 @@ const changeImg = () =>{
   function loadGuestDB(name) {
     return new Promise((resolve, reject) => {
       console.log("→ Llamando a API con:", name);
-      //https://bodasgoldback-production.up.railway.app/api/
-      //http://localhost:8080/api/
-      fetch('https://bodasgoldback-production.up.railway.app/api/'+name, {
+      let path;
+      if (devMode) path = 'http://localhost:8080/api/';
+      else path = 'https://bodasgoldback-production.up.railway.app/api/';
+      fetch(path+name, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json' // Indicamos que enviamos JSON
@@ -139,26 +129,23 @@ const changeImg = () =>{
   
 
 document.addEventListener('DOMContentLoaded', async function () {
-  const params = new URLSearchParams(window.location.search);
-  let name = params.get("invitado");
+
+  const url = new URL(window.location.href);
+  let name = url.searchParams.get('invitado'); // <-- aquí
   let afterDinner = false;
-  if(name == null || name == ""){
-    name = null;
-  } else{
-    name = params.get("afterDinner");
+  if (url.searchParams.get("afterDinner") != null){
+    name = url.searchParams.get("afterDinner");
     afterDinner = true;
   }
-  console.log("Esperando datos...");
   try {
     loadBodaInfo(object,afterDinner);
-    loadIntinerario(object.intinerario);
+    if(!afterDinner)loadIntinerario(object.intinerario);
     if (name !=null){
       object.guestData =  await loadGuestDB(name); // Espera completa
     }else{
       object.guestData.done = true;
     }
     
-    console.log("✅ Datos listos, continuando...");
     loadPrincipalObject(object.guestData);
     scriptTag.textContent = JSON.stringify(object, null, 2);
     if(!object.guestData.done){
