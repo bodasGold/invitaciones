@@ -36,8 +36,8 @@ const editQuantityGuests = (quantity) =>{
         let newGuest = ``;
     if (!object.guestData.afterDinner) {
       newGuest += `<div class="row">
-        <input placeholder="Nombre Completo" name="name${index}" id="name${index}" type="text" class="wd-80 bg-crema">
-        <br><br><button onclick="allAllergens(${index})" class="wd-60 bg-crema">Selecionar Alergenos</button>
+        <input placeholder="Nombre Completo" name="name${index}" id="name${index}" type="text" class="wd-80 bg-crema mb-2">
+        <button onclick="allAllergens(${index})" class="wd-60 bg-crema">Selecionar Alergenos</button>
     </div><br>`;
     }else{
       newGuest += `<br><div class="row">
@@ -67,7 +67,7 @@ const createAllergensPopUp = () =>{
     });
     options +=`<label for="comentario">Otros:</label><br>
         <textarea id="comentario" name="comentario" rows="3" style="width:80%; resize: none;" class="bg-crema"></textarea>`;
-    options +="<button onclick='closePopUp()' class='bg-crema'>Guardar</button>";
+    options +="<br><button onclick='closePopUp()' class='bg-crema'>Guardar</button>";
     options +="</form>";
     popUPAllergens.innerHTML = options;
 

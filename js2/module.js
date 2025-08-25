@@ -64,12 +64,13 @@ const changeImg = () =>{
     return new Promise((resolve, reject) => {
       console.log("→ Llamando a API con:", name);
       let path;
+      console.log(devMode);
       if (devMode) path = 'http://localhost:8080/api/';
       else path = 'https://bodasgoldback-production.up.railway.app/api/';
       fetch(path+name, {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json' // Indicamos que enviamos JSON
+          'Content-Type': 'application/json'
         },
       })
         .then(response => {
